@@ -1,0 +1,23 @@
+Analyzing the examination results of examination done in August to September 2019 
+import pandas as pd
+import numpy as np
+import seaborn as sns
+%matplotlib inline
+
+import datetime as dt
+import matplotlib.pyplot as plt
+plt.style.use('ggplot')
+plt.rcParams["figure.figsize"] = [16,10]
+foo = r'E:\python\data36\finalSept2019.csv'
+df = pd.read_csv(foo)
+df.head()
+#######################
+STUDENT_ID	COURSE	COURSE_UNIT	SEMESTER	TEST	COURSE_WORK	EXAM	GRADE_POINT	GENDER
+0	2741	DGDD	DRAWING I	1	18	14	42	B	M
+1	2741	DGDD	INDESIGN	1	17	15	43	B+	M
+2	2741	DGDD	BUSINESS COMMUNICATION SKILL	1	12	20	54	A	M
+3	2741	DGDD	CORELDRAW	1	18	20	35	B	M
+4	2741	DGDD	DRAWING FOR GRAPHICS	1	12	20	58	A	M
+##############
+df['Final_Exam'] = df['TEST']+df['COURSE_WORK']+df['EXAM']
+df.head()
